@@ -1,0 +1,32 @@
+/* POP Media Technology · Casos de éxito
+   Estilos base compartidos. Los estilos de cada bloque van en línea (exportados del diseño). */
+:root{
+  --pop-rosa:#E0174E;
+  --pop-rosa-oscuro:#B0103C;
+  --pop-texto:#1D1D1B;
+  --pop-titulos:#3C3C3B;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ffffff;color:var(--pop-texto);font-family:Montserrat,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--pop-rosa)}
+a:hover{color:var(--pop-rosa-oscuro)}
+a:focus-visible{outline:3px solid var(--pop-rosa);outline-offset:3px}
+img{display:block;max-width:100%;height:auto}
+
+/* Video de YouTube responsivo 16:9 */
+.video{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Responsivo */
+@media (max-width:900px){
+  .row,.grid3,.grid4,.stats,.foot,.award{grid-template-columns:minmax(0,1fr) !important}
+  .nav{display:none !important}
+  .order-first{order:-1 !important}
+  .hero{height:300px !important}
+  .pad{padding-left:16px !important;padding-right:16px !important}
+  .h2{font-size:20px !important}
+}
+@media (min-width:600px) and (max-width:900px){
+  .grid3,.grid4,.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
