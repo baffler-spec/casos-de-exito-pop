@@ -19,14 +19,80 @@ img{display:block;max-width:100%;height:auto}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* Responsivo */
-@media (max-width:900px){
-  .row,.grid3,.grid4,.stats,.foot,.award{grid-template-columns:minmax(0,1fr) !important}
-  .nav{display:none !important}
-  .order-first{order:-1 !important}
-  .hero{height:300px !important}
-  .pad{padding-left:16px !important;padding-right:16px !important}
-  .h2{font-size:20px !important}
+/* ---------- Tablet (761–1024px) ---------- */
+@media (max-width: 1024px){
+  .pad{padding-left:32px !important;padding-right:32px !important}
+  .nav{gap:24px !important}
+  .row,.award{gap:40px !important}
+  .grid3{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr)) !important;row-gap:28px !important}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .ficha{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .sol{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .foot{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
 }
-@media (min-width:600px) and (max-width:900px){
-  .grid3,.grid4,.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+/* ---------- Móvil (≤760px) ---------- */
+@media (max-width: 760px){
+  .pad{padding-left:20px !important;padding-right:20px !important}
+  .sec{padding-top:36px !important;padding-bottom:36px !important;gap:24px !important}
+  .nav{display:none !important}
+  .hdr{padding-top:10px !important;padding-bottom:10px !important}
+  .hdr svg{width:72px !important;height:32px !important}
+  .hdr a:last-child{padding:10px 16px !important;font-size:13px !important}
+
+  /* Hero: imagen más baja y sello debajo, sin tapar la foto */
+  .hero{height:auto !important;overflow:visible !important}
+  .hero > img{height:240px !important}
+  .hero-badge{position:static !important;margin:0 !important;border-radius:0 !important;box-shadow:none !important;padding:14px 20px !important;border-bottom:1px solid #EEEEEE}
+  .hero-badge span:last-child{font-size:13px !important}
+
+  .h2{font-size:18px !important;line-height:1.4 !important}
+  h1{font-size:17px !important}
+
+  /* Texto + imagen: una columna, imagen siempre después del texto */
+  .row,.award,.foot{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}
+  .order-first{order:-1 !important}
+  .row p,.award p,.sec p{font-size:15px !important;line-height:1.65 !important}
+  .frame{padding:0 !important}
+  .frame-bg{display:none !important}
+  .frame img{box-shadow:0 10px 24px rgba(0,0,0,0.16) !important;border-radius:8px !important}
+
+  /* Cifras en 2 columnas */
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:24px 16px !important;padding-top:32px !important;padding-bottom:32px !important}
+  .stats > div:last-child:nth-child(odd){grid-column:1 / -1}
+  .stat-n{font-size:32px !important}
+  .stats span:not(.stat-n){font-size:13px !important}
+
+  /* Tarjetas */
+  .grid3{grid-template-columns:minmax(0,1fr) !important;gap:12px !important}
+  .card{padding:20px !important;gap:6px !important}
+  .card h3{font-size:16px !important}
+  .card p,.card li{font-size:14px !important}
+  .cap{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:16px !important}
+  .cap > div > span:last-child{font-size:26px !important;line-height:1.1}
+  .cap span span{display:block;font-size:13px !important;margin-top:2px}
+  .capbox{padding:24px 20px !important}
+
+  /* Cita */
+  .quote{padding:24px 20px !important;gap:12px !important}
+  .quote svg{width:28px !important;height:22px !important}
+  .quote-t{font-size:17px !important;line-height:1.55 !important}
+
+  /* Galería en mosaico 2x2 */
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}
+  .gallery img{border-radius:6px !important}
+
+  /* Ficha técnica en 2 columnas; tecnología a todo lo ancho */
+  .ficha{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:20px 16px !important}
+  .ficha > div:last-child{grid-column:1 / -1}
+
+  /* Soluciones: tarjetas compactas en 2 columnas */
+  .sol{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}
+  .sol > a:last-child:nth-child(odd){grid-column:1 / -1;min-height:0 !important;flex-direction:row !important;align-items:center !important}
+  .sol-i{flex-direction:column !important;align-items:flex-start !important;gap:8px !important;padding:14px !important;font-size:13px !important;line-height:1.3 !important;min-height:96px !important}
+
+  /* CTA */
+  .cta-h{font-size:21px !important}
+  .cta-btn{justify-self:stretch !important;justify-content:center !important}
+  .foot{gap:28px !important;padding-top:40px !important}
 }
