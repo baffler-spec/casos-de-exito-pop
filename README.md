@@ -20,6 +20,22 @@ assets/img/banorte/
 
 HTML estático, sin dependencias ni build. Tipografía Montserrat (Google Fonts) y rosa de marca `#E0174E`. Los videos se cargan embebidos desde YouTube (`youtube-nocookie.com`), por lo que el repo no incluye archivos de video.
 
+## Banner CALA Awards 2026 (home)
+
+Componente independiente para el home de popmt.com, en `banner-cala-home/`. Va justo debajo del slider principal y lleva al caso de éxito del C5.
+
+```
+banner-cala-home/index.html     Vista previa: desktop + vista en celular (390 px)
+banner-cala-home/banner.html    El banner solo, como página
+banner-cala-home/snippet.html   El HTML para pegar en un widget HTML de Elementor
+banner-cala-home/banner-cala.css  Estilos del banner (clases con prefijo .pmt-cala)
+banner-cala-home/img/           Foto del premio y fondo del C5
+```
+
+Es un solo bloque responsivo: en desktop texto a la izquierda y foto a la derecha; en celular (≤760 px) la foto pasa arriba y los botones van a todo el ancho.
+
+Para integrarlo: pega `banner-cala.css` en el CSS adicional del tema (o en un `<style>` del widget), pega `snippet.html` en un widget HTML debajo del slider y cambia las rutas `img/...` por las URLs de la biblioteca de medios. El botón principal apunta a `https://popmt.com/c5-estado-de-mexico/`; ajústalo si la landing queda en otra URL.
+
 ## Ver en local
 
 Abre `index.html` en el navegador, o levanta un servidor:
